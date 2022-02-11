@@ -17,15 +17,15 @@ class PdfToTextController extends Controller
         $pdfParser = new Parser;
         $pdf = $pdfParser->parseFile($file->path());
         $content = $pdf->getText();
-        $text = explode('SOFTWARE ENGINEER', $content, 2 );
+        $text = explode('KALATIA COLLEGE', $content, 100 );
         $text = $text[0];
 
     //-- split the lines
     $lines = explode( "\n", $text );
 
     return array(
-        'paper_title'   => $lines[0] . $lines[1],
-        'author'        => $lines[2]
+        'paper_title'   => $lines[0] . $lines[1] . $lines[2] . $lines[3] . $lines[4] . $lines[5] . $lines[6],
+        'author'        => $lines[0]
     );
 
 

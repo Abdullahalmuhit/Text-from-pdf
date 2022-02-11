@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PdfToTextController;
+use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('file', [FileController::class, 'index'])->name('file');
+Route::post('file', [FileController::class, 'store'])->name('file.store');
 
 Route::get('/', function () {
     return view('welcome');
